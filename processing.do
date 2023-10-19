@@ -34,7 +34,7 @@ import delimited "WEO_Data.xls",clear
 	drop v8
 //rename v6 to response for clarity 
 	rename v6 response
-//rotate to group by country and make question_num a varibale
+//rotate to group by country and make question_num a variable
 	reshape wide response, i(country) j(question_num) 
 //merge one:one on country 
 merge 1:1 country using "/Users/tm/Documents/Stata/owid.dta"
