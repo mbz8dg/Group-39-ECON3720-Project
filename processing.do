@@ -6,9 +6,9 @@
 							10/19/23
  -----------------------------------------------------------------------------*/
 
-
+cd "/Users/tm/Desktop/UVA Materials/Semester 6 (Fall 2023)/Metrics/"
 //import first data set
-import delimited "/Users/tm/Desktop/UVA Materials/Semester 6 (Fall 2023)/Metrics/owid-co2-data.csv", clear 
+import delimited "owid-co2-data.csv", clear 
 //select only 2020 data to be in line with other data set
 	keep if year==2020
 //drop uneccessary year variable, year= 2020 for all observations
@@ -17,7 +17,7 @@ import delimited "/Users/tm/Desktop/UVA Materials/Semester 6 (Fall 2023)/Metrics
 	save owid, replace
 
 //import second data set 	
-import delimited "/Users/tm/Desktop/UVA Materials/Semester 6 (Fall 2023)/Metrics/WEO_Data.xls",clear
+import delimited "WEO_Data.xls",clear
 	save WEO,replace
 //drop duplicate varibale that will cause errors in merge, keep Inflation by Index 
 	drop if subjectdescriptor=="Inflation, average consumer prices"&units=="Percent change"
