@@ -8,11 +8,9 @@ cd "/Users/tm/Desktop/UVA Materials/Semester 6 (Fall 2023)/Metrics/"
 drop if missing(consumption_co2)
 /*cast string responses from original data set to numeric and create descrptive 
 varibale names*/
-encode response1, gen(gdp_per_cap)
-encode response4, gen(imports)
-encode response6, gen(exports)
+encode response6, gen(gdp_per_cap)
 //keep varibles used for regression
-keep gdp_per_cap imports exports population primary_energy_consumption consumption_co2
+keep gdp_per_cap population primary_energy_consumption consumption_co2
 //create quadratic and interaction terms
 gen gdp_per_cap2 = gdp_per_cap^2
 gen gdp_per_cap3 = gdp_per_cap^3
